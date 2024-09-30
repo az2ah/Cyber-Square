@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                $('#heading').toggle();
+            });
+            $("#btn2").click(function(){
+            $("#div1").fadeIn();
+            $("#div2").fadeIn("slow");
+            $("#div3").fadeIn(3000);
+            });
+            $("#flip").click(function(){
+            $("#panel").slideToggle("slow");
+            });
+            $("#btn3").click(function(){
+            $("#div4").animate({left: '250px'});
+            });
+        });
+    </script>
+    <style> 
+        #panel, #flip {
+          padding: 20px;
+          text-align: center;
+          background-color: #e5eecc;
+          border: solid 1px #c3c3c3;
+        }
+        
+        #panel {
+          padding: 50px;
+          display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">HELLO WORLD</h1>
+    <button id="btn1">Click to Toggle</button><br><br>
+    <button id="btn2">Click to fade boxes</button><br><br>
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:pink;">
+        Hello
+    </div><br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:palegreen;">
+        Hi
+    </div><br>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:lightcoral;">
+        Hola
+    </div>
+    <div id="flip">Click to slide the panel down or up</div>
+    <div id="panel">Hello world!</div><br>
+    <button id="btn3">Animation</button><br><br>
+    <div id="div4" style="background:#98bf21;height:100px;width:100px;position:absolute;">
+        Animate!!
+    </div>
+</body>
+</html>

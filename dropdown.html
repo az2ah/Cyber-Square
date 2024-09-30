@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down</title>
+</head>
+<body>
+<center>
+<form>
+  Select a color:<br><br>
+  <select id="mySelect" size="5">
+    <option>Orange</option>
+    <option>Yellow</option>
+    <option>Blue</option>
+    <option>Pink</option>
+  </select>
+</form>
+<br>
+<button onclick="myFunction()">Remove selected color</button>
+</center>
+<script>
+function myFunction()
+{
+  var x = document.getElementById("mySelect");
+  x.remove(x.selectedIndex);
+}
+</script>
+</body>
+</html>

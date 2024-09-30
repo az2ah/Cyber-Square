@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+</head>
+<body>
+    <center>
+    <h2>LOGIN</h2>
+    <form method="post">
+        <p style="color: red;" id="usererror"></p>
+        <input type="text" id="username" name="userName" placeholder="username"><br>
+        <p style="color: red;" id="passerror"></p>
+        <input type="password" id="userpass" name="userPass" placeholder="password"><br><br>
+        <button class="btn btn-md" type="submit" style="background-color: #00796b; color: white;" onclick="return validate_login()"> LOGIN </button>
+    </form>
+    </center>
+    <script>
+        function validate_login()
+        {
+            status1 = 1;
+            status2 = 1;
+            username = document.getElementById("username");
+            password = document.getElementById("userpass");
+            if(username.value == ""){
+                username.style.borderColor = "#FF0000";
+                usererror.style.display = "block";
+                usererror.style.color = "#FF0000";
+                usererror.innerHTML = "Enter Username";
+                status1=0;
+            }
+            else{
+                username.style.borderColor = "#ced4da";
+                usererror.style.display = "none";
+                status1 = 1;
+            }
+
+            if(password.value == ""){
+                password.style.borderColor = "#FF0000";
+                passerror.style.display = "block";
+                passerror.style.color = "#FF0000";
+                passerror.innerHTML = "Enter Password";
+                status2=0;
+            }
+            else{
+                password.style.borderColor = "#ced4da";
+                passerror.style.display = "none";
+                status2 = 1;
+            }
+            if(status1 == 0||status2 == 0){
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
